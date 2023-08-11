@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "strict": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "target": "ES2019",
+  },
+
+  "include": [
+    "src"
+  ]
+}

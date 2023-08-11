@@ -1,0 +1,52 @@
+{
+  "name": "br-cid10-csv",
+  "version": "1.0.0",
+  "description": "Utilitários para leitura dos arquivos CSV da CID-10 fornecidos pelo DATASUS",
+  "author": "BR-CID10-CSV.js contributors",
+  "license": "LGPL-3.0-or-later",
+  "keywords": [
+    "CID-10",
+    "DATASUS"
+  ],
+  "homepage": "https://ademilsonfp.github.io/br-cid10-csv-docs",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.cts",
+  "exports": {
+    "require": {
+      "types": "./lib/index.d.cts",
+      "default": "./lib/index.cjs"
+    },
+    "import": {
+      "types": "./lib/index.d.mts",
+      "default": "./lib/index.mjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ademilsonfp/br-cid10-csv.git"
+  },
+  "scripts": {
+    "build": "pkgroll --dist lib",
+    "build:docs": "typedoc --name BR-CID10-CSV.js --useTsLinkResolution false --readme src/index.md src/index.ts",
+    "test": "c8 -r text -r html -n src/index.ts ava"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.8",
+    "ava": "^5.3.1",
+    "c8": "^8.0.1",
+    "dotenv": "^16.3.1",
+    "pkgroll": "^1.11.0",
+    "tsx": "^3.12.7",
+    "typedoc": "^0.24.8",
+    "typescript": "^5.1.6"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=tsx"
+    ]
+  }
+}
