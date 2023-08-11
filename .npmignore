@@ -6,3 +6,4 @@
 /.gitignore
 /*.tgz
 /tsconfig.json
+/typedoc.json

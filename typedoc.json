@@ -1,0 +1,9 @@
+{
+  "name": "BR-CID10-CSV.js",
+  "readme": "src/index.md",
+  "entryPoints": ["src/index.ts"],
+  "useTsLinkResolution": false,
+  "navigationLinks": {
+    "Código-fonte": "https://github.com/ademilsonfp/br-cid10-csv"
+  }
+}

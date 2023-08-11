@@ -28,7 +28,7 @@
   },
   "scripts": {
     "build": "pkgroll --dist lib",
-    "build:docs": "typedoc --name BR-CID10-CSV.js --useTsLinkResolution false --readme src/index.md src/index.ts",
+    "build:docs": "typedoc",
     "test": "c8 -r text -r html -n src/index.ts ava"
   },
   "devDependencies": {
