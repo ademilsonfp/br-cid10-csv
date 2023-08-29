@@ -56,6 +56,13 @@ export class CidRecord {
   }
 }
 
+// Configurando a propriedade `CidRecord.prototype.$columns` de forma a evitar
+// que esta seja enumerada como atributo de objeto
+
+Object.defineProperties(CidRecord.prototype, {
+  $columns: { enumerable: false, writable: true }
+});
+
 /**
  * Capítulo da CID-10
  *
@@ -164,6 +171,18 @@ export class Cid10Chapter extends CidRecord {
       .replace(/^[IVXLCDM]+\.\s*/, '');
   }
 }
+
+// Configurando as funções get de `Cid10Chapter` de forma fazer com que sejam
+// enumeradas como atributo de objeto
+
+Object.defineProperties(Cid10Chapter.prototype, {
+  number: { enumerable: true },
+  roman: { enumerable: true },
+  catFirst: { enumerable: true },
+  catLast: { enumerable: true },
+  description: { enumerable: true },
+  abbreviation: { enumerable: true }
+});
 
 /**
  * Função geradora assíncrona para leitura do arquivo `CID-10-CAPITULOS.CSV` da
@@ -276,6 +295,16 @@ export class Cid10Group extends CidRecord {
     return this.$columns[Cid10Group.ABBREVIATION];
   }
 }
+
+// Configurando as funções get de `Cid10Group` de forma fazer com que sejam
+// enumeradas como atributo de objeto
+
+Object.defineProperties(Cid10Group.prototype, {
+  catFirst: { enumerable: true },
+  catLast: { enumerable: true },
+  description: { enumerable: true },
+  abbreviation: { enumerable: true }
+});
 
 /**
  * Função geradora assíncrona para leitura do arquivo `CID-10-GRUPOS.CSV` da
@@ -420,6 +449,18 @@ export class Cid10Category extends CidRecord {
     )?.split(',') || [];
   }
 }
+
+// Configurando as funções get de `Cid10Category` de forma fazer com que sejam
+// enumeradas como atributo de objeto
+
+Object.defineProperties(Cid10Category.prototype, {
+  code: { enumerable: true },
+  classif: { enumerable: true },
+  description: { enumerable: true },
+  abbreviation: { enumerable: true },
+  refer: { enumerable: true },
+  excluded: { enumerable: true }
+});
 
 /**
  * Função geradora assíncrona para leitura do arquivo `CID-10-CATEGORIAS.CSV` da
@@ -617,6 +658,20 @@ export class Cid10Subcategory extends CidRecord {
   }
 }
 
+// Configurando as funções get de `Cid10Subcategory` de forma fazer com que
+// sejam enumeradas como atributo de objeto
+
+Object.defineProperties(Cid10Subcategory.prototype, {
+  code: { enumerable: true },
+  classif: { enumerable: true },
+  restrBySex: { enumerable: true },
+  canCauseDeath: { enumerable: true },
+  description: { enumerable: true },
+  abbreviation: { enumerable: true },
+  refer: { enumerable: true },
+  excluded: { enumerable: true }
+});
+
 /**
  * Função geradora assíncrona para leitura do arquivo `CID-10-SUBCATEGORIAS.CSV`
  * da CID-10
@@ -734,6 +789,16 @@ export class CidOGroup extends CidRecord {
   }
 }
 
+// Configurando as funções get de `CidOGroup` de forma fazer com que sejam
+// enumeradas como atributo de objeto
+
+Object.defineProperties(CidOGroup.prototype, {
+  catFirst: { enumerable: true },
+  catLast: { enumerable: true },
+  description: { enumerable: true },
+  refer: { enumerable: true }
+});
+
 /**
  * Função geradora assíncrona para leitura do arquivo `CID-O-GRUPOS.CSV` da
  * CID-10
@@ -825,6 +890,15 @@ export class CidOCategory extends CidRecord {
     return this.$columns[CidOCategory.REFER] || undefined;
   }
 }
+
+// Configurando as funções get de `CidOCategory` de forma fazer com que sejam
+// enumeradas como atributo de objeto
+
+Object.defineProperties(CidOCategory.prototype, {
+  code: { enumerable: true },
+  description: { enumerable: true },
+  refer: { enumerable: true }
+});
 
 /**
  * Função geradora assíncrona para leitura do arquivo `CID-O-CATEGORIAS.CSV` da

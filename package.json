@@ -1,6 +1,6 @@
 {
   "name": "br-cid10-csv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilitários para leitura dos arquivos CSV da CID-10 fornecidos pelo DATASUS",
   "author": "BR-CID10-CSV.js contributors",
   "license": "LGPL-3.0-or-later",
